@@ -102,3 +102,10 @@ async def obter_pedidos_por_estado(estado: EstadoPedido = Path(..., title="Estad
     await asyncio.sleep(1)
     pedidos = PedidoRepo.obter_todos_por_estado(estado.value)
     return pedidos
+
+
+@router.get("/obter_usuarios")
+async def obter_usuarios():
+    await asyncio.sleep(1)
+    usuarios = UsuarioRepo.obter_todos_por_perfil()
+    return usuarios
